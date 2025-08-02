@@ -14,5 +14,5 @@ const (
 	UserAgent = "EcloudTV/6.5.5 (PJX110; unknown; home02) Android/35"
 	Accept    = "application/json;charset=UTF-8"
 
-	DefaultTimeout = time.Second * 5
+	DefaultTimeout = time.Second * 30
 )

@@ -80,3 +80,19 @@ func (c *client) WithToken(token AuthToken) Client {
 
 	return c
 }
+
+func (c *client) WithForceWithToken(flags ...bool) Client {
+	if len(flags) > 0 {
+		c.forceWithToken = flags[0]
+	} else {
+		c.forceWithToken = true
+	}
+
+	return c
+}
+
+func (c *client) WithClient(client *resty.Client) Client {
+	c.httpClient = client
+
+	return c
+}

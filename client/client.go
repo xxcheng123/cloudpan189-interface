@@ -1,10 +1,15 @@
 package client
 
-import "context"
+import (
+	"context"
+	"resty.dev/v3"
+)
 
 type Client interface {
 	WithDebug(flags ...bool) Client
 	WithToken(token AuthToken) Client
+	WithForceWithToken(flags ...bool) Client
+	WithClient(client *resty.Client) Client
 
 	GetShareInfo(ctx context.Context, shareCode string, opts ...GetShareInfoOption) (*GetShareInfoResponse, error)
 	GetFileDownload(ctx context.Context, fileId String, opts ...GetFileDownloadOption) (*GetFileDownloadResponse, error)
@@ -22,9 +27,12 @@ type client struct {
 	isDebug        bool
 	forceWithToken bool // 有的接口请求时不是必须携带 token 的，如果设置 true，那么会强制携带
 
-	authToken AuthToken
+	authToken  AuthToken
+	httpClient *resty.Client
 }
 
 func New() Client {
-	return &client{}
+	return &client{
+		httpClient: httpClient,
+	}
 }
