@@ -14,6 +14,8 @@ const (
 	ApiGetUserPrivileges     = "/open/user/getUserPrivileges.action"
 	ApiListResourceShareDir  = "/open/share/listResourceShareDir.action"
 	ApiListShareDir          = "/open/share/listShareDir.action"
+
+	ApiSubscribeGetUser = "/open/subscribe/getUser.action"
 )
 
 // RequiresToken 是否需要token

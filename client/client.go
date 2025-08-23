@@ -21,6 +21,7 @@ type Client interface {
 	GetUserPrivileges(ctx context.Context) (*GetUserPrivilegesResponse, error)
 	ListResourceShareDir(ctx context.Context, upUserId string, shareId int64, fileId String, opts ...WithListResourceShareDirRequestOption) (*ListFilesResponse, error)
 	ListShareDir(ctx context.Context, shareId int64, fileId String, opts ...WithListShareFileRequestOption) (*ListFilesResponse, error)
+	SubscribeGetUser(ctx context.Context, userId string) (*SubscribeGetUserResponse, error)
 }
 
 type client struct {
