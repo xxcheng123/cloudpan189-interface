@@ -5,15 +5,19 @@ type ApiURL string
 const (
 	ApiGetShareInfoByCode = "/open/share/getShareInfoByCode.action"
 
-	ApiGetFileInfo           = "/open/file/getFileInfo.action"
-	ApiGetFileDownloadURL    = "/open/file/getFileDownloadUrl.action"
-	ApiGetFolderInfo         = "/open/file/getFolderInfo.action"
-	ApiGetNewVLCVideoPlayURL = "/open/file/getNewVlcVideoPlayUrl.action"
-	ApiGetUpResourceShare    = "/open/share/getUpResourceShare.action"
-	ApiGetUserInfo           = "/open/user/getUserInfo.action"
-	ApiGetUserPrivileges     = "/open/user/getUserPrivileges.action"
-	ApiListResourceShareDir  = "/open/share/listResourceShareDir.action"
-	ApiListShareDir          = "/open/share/listShareDir.action"
+	ApiGetFileInfo              = "/open/file/getFileInfo.action"
+	ApiGetFileDownloadURL       = "/open/file/getFileDownloadUrl.action"
+	ApiGetFolderInfo            = "/open/file/getFolderInfo.action"
+	ApiGetNewVLCVideoPlayURL    = "/open/file/getNewVlcVideoPlayUrl.action"
+	ApiGetUpResourceShare       = "/open/share/getUpResourceShare.action"
+	ApiGetUserInfo              = "/open/user/getUserInfo.action"
+	ApiGetUserPrivileges        = "/open/user/getUserPrivileges.action"
+	ApiListResourceShareDir     = "/open/share/listResourceShareDir.action"
+	ApiListShareDir             = "/open/share/listShareDir.action"
+	ApiListFiles                = "/open/file/listFiles.action"
+	ApiGetFamilyList            = "/open/family/manage/getFamilyList.action"
+	ApiFamilyListFiles          = "/open/family/file/listFiles.action"
+	ApiFamilyGetFileDownloadURL = "/open/family/file/getFileDownloadUrl.action"
 
 	ApiSubscribeGetUser = "/open/subscribe/getUser.action"
 )
@@ -28,7 +32,11 @@ func (a ApiURL) RequiresToken() bool {
 		ApiGetNewVLCVideoPlayURL,
 		ApiGetUserInfo,
 		ApiGetUserPrivileges,
-		ApiListResourceShareDir:
+		ApiListResourceShareDir,
+		ApiGetFamilyList,
+		ApiFamilyListFiles,
+		ApiFamilyGetFileDownloadURL,
+		ApiListFiles:
 		return true
 	}
 

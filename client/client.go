@@ -21,6 +21,10 @@ type Client interface {
 	GetUserPrivileges(ctx context.Context) (*GetUserPrivilegesResponse, error)
 	ListResourceShareDir(ctx context.Context, upUserId string, shareId int64, fileId String, opts ...WithListResourceShareDirRequestOption) (*ListFilesResponse, error)
 	ListShareDir(ctx context.Context, shareId int64, fileId String, opts ...WithListShareFileRequestOption) (*ListFilesResponse, error)
+	ListFiles(ctx context.Context, folderId String, opts ...WithListFilesRequestOption) (*ListFilesResponse, error)
+	GetFamilyList(ctx context.Context) (*GetFamilyListResponse, error)
+	FamilyListFiles(ctx context.Context, familyId String, folderId String, opts ...WithFamilyListFilesRequestOption) (*ListFilesResponse, error)
+	FamilyGetFileDownload(ctx context.Context, familyId String, fileId String, opts ...FamilyGetFileDownloadOption) (*FamilyGetFileDownloadResponse, error)
 	SubscribeGetUser(ctx context.Context, userId string) (*SubscribeGetUserResponse, error)
 }
 
