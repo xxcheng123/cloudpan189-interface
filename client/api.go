@@ -32,7 +32,6 @@ func (a ApiURL) RequiresToken() bool {
 		ApiGetNewVLCVideoPlayURL,
 		ApiGetUserInfo,
 		ApiGetUserPrivileges,
-		ApiListResourceShareDir,
 		ApiGetFamilyList,
 		ApiFamilyListFiles,
 		ApiFamilyGetFileDownloadURL,
